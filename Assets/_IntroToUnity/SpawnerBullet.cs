@@ -11,11 +11,10 @@ public class SpawnerBullet : MonoBehaviour
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
-            if (rb == null)
-                rb = bullet.AddComponent<Rigidbody>();
-
-            rb.useGravity = false;
-            rb.linearVelocity = transform.forward * bulletSpeed;
+            if (rb != null)
+            {
+                rb.linearVelocity = transform.forward * bulletSpeed;
+            }
         }
     }
 }

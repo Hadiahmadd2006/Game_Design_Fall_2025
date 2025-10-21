@@ -25,7 +25,7 @@ public class MovingBall : MonoBehaviour
         // smoother movement: use velocity
         rb.AddForce(movement * speed, ForceMode.Acceleration);
     }
-    void OnriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("PickUp"))
         {
